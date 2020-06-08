@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+    />
+    <style>
+      button {
+        border-radius: 25px;
+        border: none;
+        font-family: Orbitron;
+        font-size: 3vmin;
+      }
+      button:focus {
+        outline: none;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        height: 80vh;
+        width: 80vw;
+        background-color: black;
+        margin-left: 10vw;
+        margin-top: 0;
+        padding: 1%;
+      }
+      .display {
+        grid-column-start: 1;
+        grid-column-end: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .display input {
+        width: 90%;
+        height: 90%;
+        font-size: 5vmin;
+        padding-left: 2%;
+        margin-bottom: 1%;
+        font-family: Orbitron;
+        color: chartreuse;
+        background-color: black;
+        border: 2px solid lightgray;
+      }
+      .ac {
+        grid-column-start: 1;
+        grid-column-end: 3;
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .ac button {
+        width: 90%;
+        height: 90%;
+        background-color: #bc544b;
+      }
+      .divide {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .divide button {
+        width: 90%;
+        height: 90%;
+        background-color: lightslategray;
+      }
+      .multiply {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .multiply button {
+        width: 90%;
+        height: 90%;
+        background-color: lightslategray;
+      }
+      .random {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .random button {
+        width: 90%;
+        height: 90%;
+        background-color: gray;
+      }
+      .equal {
+        grid-row: 5 / span 2;
+        grid-column-start: 4;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .equal button {
+        width: 90%;
+        height: 90%;
+        background-color: blue;
+      }
+      .zero {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .zero button {
+        width: 90%;
+        height: 90%;
+        background-color: gray;
+      }
+      button:hover {
+        background-color: orange;
+      }
+    </style>
+    <script>
+      var ins;
+      var int;
+      function calcc() {
+        ins = eval(dis.value);
+        document.getElementById("dis").value = ins;
+      }
+      function enter(num) {
+        var dis = document.getElementById("dis");
+        if (dis.value == 0) {
+          dis.value = num;
+        } else dis.value += num;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display">
+        <input id="dis" type="text" value="0" />
+      </div>
+      <div class="ac"><button onclick="dis.value='0'">AC</button></div>
+      <div class="divide"><button onclick="enter('/')">/</button></div>
+      <div class="multiply"><button onclick="enter('*')">X</button></div>
+      <div class="random"><button onclick="enter('9')">9</button></div>
+      <div class="random"><button onclick="enter('8')">8</button></div>
+      <div class="random"><button onclick="enter('7')">7</button></div>
+      <div class="random"><button onclick="enter('-')">-</button></div>
+      <div class="random"><button onclick="enter('6')">6</button></div>
+      <div class="random"><button onclick="enter('5')">5</button></div>
+      <div class="random"><button onclick="enter('4')">4</button></div>
+      <div class="random"><button onclick="enter('+')">+</button></div>
+      <div class="random"><button onclick="enter('3')">3</button></div>
+      <div class="random"><button onclick="enter('2')">2</button></div>
+      <div class="random"><button onclick="enter('1')">1</button></div>
+      <div class="equal"><button onclick="calcc()">=</button></div>
+      <div class="zero"><button onclick="enter('0')">0</button></div>
+      <div class="random">
+        <button
+          onclick="enter('.')"
+          style="font-size: 7vmin; font-weight: bolder;"
+        >
+          .
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
